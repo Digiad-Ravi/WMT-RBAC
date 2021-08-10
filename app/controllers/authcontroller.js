@@ -10,6 +10,9 @@ exports.signup = (req, res) => {
   const user = new User({
     username: req.body.username,
     email: req.body.email,
+    company: req.body.company_name,
+    firstname: req.body.first_name,
+    lastname: req.body.last_name,
     password: bcrypt.hashSync(req.body.password, 8)
   });
 
@@ -108,3 +111,6 @@ exports.signin = (req, res) => {
       });
     });
 };
+
+
+
