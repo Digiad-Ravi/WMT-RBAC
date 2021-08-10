@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to Role based access control application." });
 });
 
-const PORT = process.env.PORT|| 3000
+const PORT = process.env.PORT|| 3001
 
 db.mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true

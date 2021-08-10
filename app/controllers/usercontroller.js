@@ -1,3 +1,6 @@
+const db = require("../models");
+const User = db.user;
+
 exports.allAccess = (req, res) => {
   res.status(200).send("Public Content.");
 };
@@ -12,9 +15,9 @@ exports.vendorBoard = (req, res) => {
 
 exports.customer = (req, res) => {
   User.findOne({
-    _id: req.body.customerid
-  })
-    .exec((err, user) => {
+    _id: req.params.id
+  }).populate("roles", "-__v")
+  .exec((err, user) => {
       if (err) {
         res.status(500).send({ message: err });
         return;

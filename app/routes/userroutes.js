@@ -20,6 +20,6 @@ module.exports = function(app) {
     controller.vendorBoard
   );
 
-  app.get("/api/customer/:customerid", controller.customer);
+  app.get("/api/customer/:id", controller.customer);
 
 };
