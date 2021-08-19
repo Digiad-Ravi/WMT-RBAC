@@ -5,6 +5,10 @@ const db = require("./app/models");
 
 const app =express();
 
+app.use(cors({
+  origin: '*'
+}));
+
 require('dotenv').config();
 
 // parse requests of content-type - application/json
@@ -12,9 +16,6 @@ app.use(bodyParser.json());
 
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
-
-app.use(cors);
-
 
 const Role = db.role;
 
