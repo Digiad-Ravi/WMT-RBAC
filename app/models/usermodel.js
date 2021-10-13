@@ -5,10 +5,10 @@ const User = mongoose.model(
   new mongoose.Schema({
     firstname: String,
     lastname: String,
-    username: String,
     email: String,
     password: String,
     company: String,
+    phonenumber: String,
     avatar: [String],
     geo_location: { 
       latitude: String,

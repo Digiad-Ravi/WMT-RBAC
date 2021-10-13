@@ -35,7 +35,6 @@ exports.customer = (req, res) => {
 
       res.status(200).send({
         id: user._id,
-        user_name: user.username,
         first_name: user.firstname,
         last_name: user.lastname,
         email: user.email,
