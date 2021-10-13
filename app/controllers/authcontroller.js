@@ -13,7 +13,13 @@ exports.signup = (req, res) => {
     company: req.body.company_name,
     firstname: req.body.first_name,
     lastname: req.body.last_name,
-    password: bcrypt.hashSync(req.body.password, 8)
+    password: bcrypt.hashSync(req.body.password, 8),
+    avatar: req.body.avatar,
+    geo_location: req.body.geo_location,
+    is_approved: req.body.is_approved,
+    active: req.body.active,
+    deleted: req.body.deleted,
+    created_on_utc_date: new Date(Date.now())
   });
 
   user.save((err, user) => {
